@@ -1,0 +1,23 @@
+PDF MAKER:
+1. npm install --save pdfmake (instala pdfmake y nos lo guarda en nuestras dependencias (package.json)
+
+2. (en app.component.ts):
+	- import * as pdfMake from 'pdfMake/build/pdfmake';
+	- import * as pdfFonts from 'pdfMake/build/vfs_fonts';
+
+	(Esto dara error para solucionarlo instalar: npm i --save-dev @types/pdfmake)
+
+3. (pdfMake as any).vfs = pdfFonts.pdfMake.vfs (hacemos que pdfMake y pdfFonts esten conectados y funcionan)
+
+4. (en export class AppComponent)
+	- creamos funcion para generar el PDF ->  generatePDF() {}
+	- definimos una variable que sea igual a un obj  -> let docDefinition = {
+				content	: [
+				   'This is a sample PDF'
+				]
+				}
+
+	-dentro de la funcion hacemos pdfMake.createPDF(docDefinition).open();
+
+5. Le metemos un evento de click al boton que llegue a la funcion
+   <button (click)="genereatePDF">CREAR</button>
