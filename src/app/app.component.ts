@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   generatePDF(){
     let docDefinition = {
       content: [
@@ -26,11 +27,6 @@ export class AppComponent {
         //Texto con margen
         { text: 'Esto es un texto con margen', margin: 30 }, 
 
-        //{ text: 'Texto alineado', alignment: 'center' },
-
-        // {
-        //   image: 'assets/pug.jpeg',
-        // },
         //Creamos tablas
         {table: {
 
@@ -38,7 +34,7 @@ export class AppComponent {
                         //headerRows se establece en 1, lo que significa que la primera fila de la tabla se considerará como el encabezado y se repetirá en cada página si es necesario.
           widths: ['*','auto',100,'*'],  //* -> Todo el espacio disponible,  tamaño auto y tamaño fijo de 100 puntos
           body: [
-            ['Uno', 'Dos', 'Tres', 'Cuatro'],
+            ['Pablo', 'Sastre', 'Punch', 'Jorgi'],
             [1,   2,   3,   4   ],
             [{text : 'Valor en bold', bold:true},'Col2','Col3','Col4'],   
           ]
@@ -48,15 +44,20 @@ export class AppComponent {
         //QR
         { qr: 'https://sergiioog.github.io/' , margin:30 },
 
+        //{ text: 'Texto alineado', alignment: 'center' },
+
+        // {
+        //   image: 'assets/pug.jpeg',
+        // },
       
     ],
     
-    //FUERA DE LA VARIABLE PORQUE LE VAMOS A DAR ESTILOS
+    //FUERA DE CONTENT PORQUE LE VAMOS A DAR ESTILOS
       styles: {
         header: {
           fontSize: 40,
           bold: true,
-          // color: 'red'
+          color: 'red'
         },
         titulo_principal: {
           fontSize: 20,
