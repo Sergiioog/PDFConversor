@@ -21,3 +21,5 @@ PDF MAKER:
 
 5. Le metemos un evento de click al boton que llegue a la funcion
    <button (click)="genereatePDF">CREAR</button>
+
+DOCUMENTACION: https://pdfmake.github.io/docs/0.1/getting-started/
